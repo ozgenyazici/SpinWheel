@@ -3,22 +3,22 @@ using UnityEngine.UI;
 
 namespace CardGame
 {
-    public class SpinWheelUI : MonoBehaviour
+    public class WheelUI : MonoBehaviour
     {
         [SerializeField] private Image backgroundImage;
         [SerializeField] private Image indicatorImage;
-
+        [SerializeField] private RewardManager rewardManager;
         private void OnEnable()
         {
-            RewardManager.Instance.OnSpinWheelDataEvent.AddListener(UpdateSpinWheelVisuals);
+            rewardManager.OnSpinWheelDataEvent.AddListener(UpdateSpinWheelVisuals);
         }
         private void OnDisable()
         {
-            RewardManager.Instance.OnSpinWheelDataEvent.RemoveListener(UpdateSpinWheelVisuals);
+            rewardManager.OnSpinWheelDataEvent.RemoveListener(UpdateSpinWheelVisuals);
         }
 
 
-        void UpdateSpinWheelVisuals(SpinWheelData spinWheelData)
+        void UpdateSpinWheelVisuals(WheelDataSO spinWheelData)
         {
             backgroundImage.sprite = spinWheelData.bgSprite;
             indicatorImage.sprite = spinWheelData.indicatorSprite;

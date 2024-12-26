@@ -5,14 +5,11 @@ using UnityEngine;
 namespace CardGame
 {
     [CreateAssetMenu(fileName = "SpinWheel", menuName = "ScriptableObjects/SpinWheel", order = 1)]
-    public class SpinWheelData : ScriptableObject
+    public class WheelDataSO : ScriptableObject
     {
         public Sprite bgSprite;
         public Sprite indicatorSprite;
-        public List<Reward> rewards;
-
-        bool bombAdded = false;
-
+        public List<RewardDataSO> rewards;
     }
 
 }

@@ -6,35 +6,45 @@ namespace CardGame
 {
     public class RewardManager : MonoBehaviour
     {
-        private static RewardManager _instance;
-        public static RewardManager Instance => _instance ?? (_instance = new GameObject("RewardManager").AddComponent<RewardManager>());
-
-        public SpinWheelData bronzeSpinWheelData;
-        public SpinWheelData silverSpinWheelData;
-        public SpinWheelData goldenSpinWheelData;
+        public WheelDataSO bronzeSpinWheelData;
+        public WheelDataSO silverSpinWheelData;
+        public WheelDataSO goldenSpinWheelData;
 
         private IRewardSelection _selectionStrategy;
-        private SpinWheelData _currentSpinWheelData;
+        [SerializeField] private WheelDataSO _currentSpinWheelData;
 
 
         public SpinWheelDataEvent OnSpinWheelDataEvent = new SpinWheelDataEvent();
 
-        void Awake()
-        {
-            if (_instance == null)
-            {
-                _instance = this;
-                DontDestroyOnLoad(gameObject);
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
-            _selectionStrategy = new RoundBasedSelection();
+        private RewardDataSO rewardDummy;
 
+        public Sprite GetIcon(int id)
+        {
+            return RewardItem(id).icon;
+        }
+        public string GetName(int id)
+        {
+            return RewardItem(id).name;
+        }
+        public int GetValue(int id)
+        {
+            return RewardItem(id).value;
         }
 
-        public List<Reward> SetupSpin(int round)
+        private RewardDataSO RewardItem(int id)
+        {
+            SetupWheel(1);
+
+            foreach (RewardDataSO reward in _currentSpinWheelData.rewards)
+            {
+                if (reward.id == id)
+                    return reward;
+            }
+
+            return rewardDummy;
+        }
+
+        public List<RewardDataSO> SetupWheel(int round)
         {
             if (round % 30 == 0)
             {
@@ -51,7 +61,7 @@ namespace CardGame
 
             OnSpinWheelDataEvent.Invoke(_currentSpinWheelData);
 
-            return _selectionStrategy.SelectRewards(_currentSpinWheelData.rewards, round);
+            return _currentSpinWheelData.rewards;//_selectionStrategy.SelectRewards(_currentSpinWheelData.rewards, round);
         }
 
         public Sprite GetBackgroundSprite()
@@ -64,5 +74,4 @@ namespace CardGame
             return _currentSpinWheelData.indicatorSprite;
         }
     }
-
 }

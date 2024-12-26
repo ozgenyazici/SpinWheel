@@ -5,7 +5,7 @@ namespace CardGame
 {
     public interface IRewardSelection
     {
-        List<Reward> SelectRewards(List<Reward> rewards, int round);
+        List<RewardDataSO> SelectRewards(List<RewardDataSO> rewards, int round);
     }
 
 }

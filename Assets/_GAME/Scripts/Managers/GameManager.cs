@@ -1,21 +1,19 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
-using System.Linq;
+﻿using UnityEngine;
 
 
 namespace CardGame
 {
     public class GameManager : MonoBehaviour
     {
-        public SpinWheelData bronzeSpinWheelData;
-        public SpinWheelData silverSpinWheelData;
-        public SpinWheelData goldenSpinWheelData;
+        public WheelDataSO bronzeSpinWheelData;
+        public WheelDataSO silverSpinWheelData;
+        public WheelDataSO goldenSpinWheelData;
 
         void Start()
         {
-            RewardManager.Instance.bronzeSpinWheelData = bronzeSpinWheelData;
-            RewardManager.Instance.silverSpinWheelData = silverSpinWheelData;
-            RewardManager.Instance.goldenSpinWheelData = goldenSpinWheelData;
+            //  RewardManager.Instance.bronzeSpinWheelData = bronzeSpinWheelData;
+            //  RewardManager.Instance.silverSpinWheelData = silverSpinWheelData;
+            // RewardManager.Instance.goldenSpinWheelData = goldenSpinWheelData;
 
             PlayGame(30);
         }
@@ -24,9 +22,8 @@ namespace CardGame
         {
             for (int round = 1; round <= totalRounds; round++)
             {
-                Debug.Log($"Round {round}");
-                List<Reward> selectedRewards = RewardManager.Instance.SetupSpin(round);
-                Debug.Log($"Selected Rewards for Round {round}: {string.Join(", ", selectedRewards.Select(r => r.rewardName))}");
+                // List<Reward> selectedRewards = RewardManager.Instance.SetupSpin(round);
+                //Debug.Log($"Selected Rewards for Round {round}: {string.Join(", ", selectedRewards.Select(r => r.name))}");
             }
 
             UpdateSpinWheelUI();
@@ -34,9 +31,8 @@ namespace CardGame
 
         private void UpdateSpinWheelUI()
         {
-            Sprite bgSprite = RewardManager.Instance.GetBackgroundSprite();
-            Sprite indicatorSprite = RewardManager.Instance.GetIndicatorSprite();
+            //   Sprite bgSprite = RewardManager.Instance.GetBackgroundSprite();
+            //   Sprite indicatorSprite = RewardManager.Instance.GetIndicatorSprite();
         }
     }
-
 }
