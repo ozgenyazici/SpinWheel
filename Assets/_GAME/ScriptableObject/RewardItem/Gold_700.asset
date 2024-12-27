@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d40f65ca41832a4884283ff2d974ea8, type: 3}
-  m_Name: Cash
+  m_Name: Gold_700
   m_EditorClassIdentifier: 
-  id: 1
-  rewardName: Cash
-  icon: {fileID: 21300000, guid: aeae5d455314a6d4f9aa83ac9b21a17a, type: 3}
+  id: 4
+  name: Gold
+  icon: {fileID: 21300000, guid: 732f7392d48b4064eb686a274210ad32, type: 3}
   weight: 0
-  value: 1
+  value: 700

@@ -12,15 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50b9d9e8103175248bb88d7f801b4b7d, type: 3}
   m_Name: SilverSpinSO
   m_EditorClassIdentifier: 
+  zoneBg: {fileID: 21300000, guid: 51849bf7550548d44a359405a36acdb8, type: 3}
   bgSprite: {fileID: 21300000, guid: 9d3a45b9332919d41b0c3e7534d0d4f9, type: 3}
   indicatorSprite: {fileID: 21300000, guid: 366db09d9abba174c8d1a3866ec1aeb5, type: 3}
-  rewards:
-  - {fileID: 11400000, guid: 98a3976a1877b1f46bfb48270edd26d0, type: 2}
-  - {fileID: 11400000, guid: 766cb6b3d2aa9b645a42e29aca799abc, type: 2}
-  - {fileID: 11400000, guid: f58d37d5904f591429f6a4620b016f8f, type: 2}
-  - {fileID: 11400000, guid: 6f119004c7a54504daa550cad31e8d2f, type: 2}
-  - {fileID: 11400000, guid: 4e67aa7454e487641ab0b50591521188, type: 2}
-  - {fileID: 11400000, guid: 8ab65f303d2db4c47a3cc7a5e22696da, type: 2}
-  - {fileID: 11400000, guid: e2c96a4f490afd644bcaf7ea6332cb70, type: 2}
-  - {fileID: 11400000, guid: 140b9a381edf04645ab9256d60a3268b, type: 2}
-  - {fileID: 11400000, guid: de1942d2d718e0e438484266fcd0abec, type: 2}

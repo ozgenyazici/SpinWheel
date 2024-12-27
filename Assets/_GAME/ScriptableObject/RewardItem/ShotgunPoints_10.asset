@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d40f65ca41832a4884283ff2d974ea8, type: 3}
-  m_Name: Bayonet Summer
+  m_Name: ShotgunPoints_10
   m_EditorClassIdentifier: 
-  id: 7
-  rewardName: Bayonet Summer
-  icon: {fileID: 21300000, guid: 1628c610cdc1188458aee0c6858760da, type: 3}
+  id: 3
+  name: Shotgun Points
+  icon: {fileID: 21300000, guid: e0f4f1942569fce47bdfc068abb91286, type: 3}
   weight: 0
-  value: 1
+  value: 10

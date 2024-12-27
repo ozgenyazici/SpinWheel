@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SmgPoints
   m_EditorClassIdentifier: 
   id: 7
-  rewardName: Smg Points
+  name: Smg Points
   icon: {fileID: 21300000, guid: 9337fc8e0d375524481d9cc0cf82f191, type: 3}
   weight: 0
   value: 50

@@ -9,6 +9,8 @@ namespace CardGame
         public WheelDataSO silverSpinWheelData;
         public WheelDataSO goldenSpinWheelData;
 
+        private int round;
+
         void Start()
         {
             //  RewardManager.Instance.bronzeSpinWheelData = bronzeSpinWheelData;
@@ -29,6 +31,10 @@ namespace CardGame
             UpdateSpinWheelUI();
         }
 
+        public int GetRound()
+        {
+            return round;
+        }
         private void UpdateSpinWheelUI()
         {
             //   Sprite bgSprite = RewardManager.Instance.GetBackgroundSprite();

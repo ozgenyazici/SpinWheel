@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d40f65ca41832a4884283ff2d974ea8, type: 3}
   m_Name: BayonetEaster
   m_EditorClassIdentifier: 
-  id: 7
-  rewardName: Bayonet Easter
+  id: 31
+  name: Bayonet Easter
   icon: {fileID: 21300000, guid: 69ec4025a72fae448a86a94aabef87de, type: 3}
   weight: 0
   value: 1

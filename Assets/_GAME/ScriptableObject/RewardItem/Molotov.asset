@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d40f65ca41832a4884283ff2d974ea8, type: 3}
   m_Name: Molotov
   m_EditorClassIdentifier: 
-  id: 7
-  rewardName: Molotov
+  id: 15
+  name: Molotov
   icon: {fileID: 21300000, guid: fe8ed4cf7b937b547a7c52e9baa3608b, type: 3}
   weight: 0
   value: 1

@@ -13,4 +13,6 @@ namespace CardGame
         public float weight;
         public int value = 0;
     }
+
+  
 }

@@ -10,8 +10,8 @@ namespace CardGame
 
         private Vector2 imageStartPos;
         private Vector2 imageStartScale;
-        private IReward _data;
-        public void Initialize(IReward rewardData)
+        private Reward _data;
+        public void Initialize(Reward rewardData)
         {
             this._data = rewardData;
             imageStartPos = iconRenderer.transform.localPosition;

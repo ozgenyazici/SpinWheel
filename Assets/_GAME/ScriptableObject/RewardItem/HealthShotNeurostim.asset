@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d40f65ca41832a4884283ff2d974ea8, type: 3}
   m_Name: HealthShotNeurostim
   m_EditorClassIdentifier: 
-  id: 7
-  rewardName: HealthShot Neurostim
+  id: 12
+  name: Neurostim
   icon: {fileID: 21300000, guid: e1f0b612bdcf4d8459eb3b269dadcb0c, type: 3}
   weight: 0
   value: 1

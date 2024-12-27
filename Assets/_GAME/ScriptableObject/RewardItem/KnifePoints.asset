@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d40f65ca41832a4884283ff2d974ea8, type: 3}
   m_Name: KnifePoints
   m_EditorClassIdentifier: 
-  id: 7
-  rewardName: Knife Points
+  id: 19
+  name: Knife Points
   icon: {fileID: 21300000, guid: da773ee3453a2eb47835dc0b9c3949f6, type: 3}
   weight: 0
-  value: 10
+  value: 150

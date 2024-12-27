@@ -7,14 +7,14 @@ namespace CardGame
     {
         [SerializeField] private Image backgroundImage;
         [SerializeField] private Image indicatorImage;
-        [SerializeField] private RewardManager rewardManager;
+        [SerializeField] private WheelManager wheelManager;
         private void OnEnable()
         {
-            rewardManager.OnSpinWheelDataEvent.AddListener(UpdateSpinWheelVisuals);
+            wheelManager.OnSpinWheelDataEvent.AddListener(UpdateSpinWheelVisuals);
         }
         private void OnDisable()
         {
-            rewardManager.OnSpinWheelDataEvent.RemoveListener(UpdateSpinWheelVisuals);
+            wheelManager.OnSpinWheelDataEvent.RemoveListener(UpdateSpinWheelVisuals);
         }
 
 
@@ -24,5 +24,4 @@ namespace CardGame
             indicatorImage.sprite = spinWheelData.indicatorSprite;
         }
     }
-
 }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BronzeChest
   m_EditorClassIdentifier: 
   id: 2
-  rewardName: Bronze Chest
+  name: Bronze Chest
   icon: {fileID: 21300000, guid: 1743d65b021d6af46a773d1e000703fb, type: 3}
   weight: 0
   value: 1

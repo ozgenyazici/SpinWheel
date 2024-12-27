@@ -6,72 +6,39 @@ namespace CardGame
 {
     public class RewardManager : MonoBehaviour
     {
-        public WheelDataSO bronzeSpinWheelData;
-        public WheelDataSO silverSpinWheelData;
-        public WheelDataSO goldenSpinWheelData;
+        public enum RewardType { Chest, Item, Currency }
+        public RewardType rewardType;
 
-        private IRewardSelection _selectionStrategy;
-        [SerializeField] private WheelDataSO _currentSpinWheelData;
+        [SerializeField] private WheelManager wheelManager;
+
+        [SerializeField] private Reward rewardDummy = null;
 
 
-        public SpinWheelDataEvent OnSpinWheelDataEvent = new SpinWheelDataEvent();
 
-        private RewardDataSO rewardDummy;
-
-        public Sprite GetIcon(int id)
+        public Sprite GetIcon(string name)
         {
-            return RewardItem(id).icon;
+            return RewardItem(name).icon;
         }
-        public string GetName(int id)
+        public string GetName(string name)
         {
-            return RewardItem(id).name;
+            return RewardItem(name).name;
         }
-        public int GetValue(int id)
+        public int GetValue(string name)
         {
-            return RewardItem(id).value;
+            return RewardItem(name).value;
         }
 
-        private RewardDataSO RewardItem(int id)
-        {
-            SetupWheel(1);
 
-            foreach (RewardDataSO reward in _currentSpinWheelData.rewards)
+        private Reward RewardItem(string name)
+        {
+            foreach (Reward reward in wheelManager.selectedItemList)
             {
-                if (reward.id == id)
+                if (reward.name == name)
                     return reward;
             }
 
             return rewardDummy;
         }
 
-        public List<RewardDataSO> SetupWheel(int round)
-        {
-            if (round % 30 == 0)
-            {
-                _currentSpinWheelData = goldenSpinWheelData;
-            }
-            else if (round % 5 == 0)
-            {
-                _currentSpinWheelData = silverSpinWheelData;
-            }
-            else
-            {
-                _currentSpinWheelData = bronzeSpinWheelData;
-            }
-
-            OnSpinWheelDataEvent.Invoke(_currentSpinWheelData);
-
-            return _currentSpinWheelData.rewards;//_selectionStrategy.SelectRewards(_currentSpinWheelData.rewards, round);
-        }
-
-        public Sprite GetBackgroundSprite()
-        {
-            return _currentSpinWheelData.bgSprite;
-        }
-
-        public Sprite GetIndicatorSprite()
-        {
-            return _currentSpinWheelData.indicatorSprite;
-        }
     }
 }

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d40f65ca41832a4884283ff2d974ea8, type: 3}
   m_Name: GrenadeM6
   m_EditorClassIdentifier: 
-  id: 7
-  rewardName: Grenade M6
+  id: 17
+  name: Grenade M6
   icon: {fileID: 21300000, guid: 60ed2ed77fd3c804fb7432789f5dae21, type: 3}
   weight: 0
   value: 1

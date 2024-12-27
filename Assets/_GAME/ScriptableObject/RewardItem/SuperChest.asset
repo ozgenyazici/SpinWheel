@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d40f65ca41832a4884283ff2d974ea8, type: 3}
   m_Name: SuperChest
   m_EditorClassIdentifier: 
-  id: 7
-  rewardName: Super Chest
+  id: 25
+  name: Super Chest
   icon: {fileID: 21300000, guid: 9836434089fbede46a88af69586d5f6c, type: 3}
   weight: 0
   value: 1
