@@ -27,10 +27,6 @@ namespace CardGame
         [SerializeField] private WheelDataSO _currentSpinWheelData;
         [SerializeField] private Transform collectTransform;
 
-        private IRewardHandler _rewardHandler;
-
-
-
         private const float collectDuration = 1f;
 
         private Reward collectedReward;
@@ -44,7 +40,6 @@ namespace CardGame
         }
         public void SetReward()
         {
-
             int rndmRange = UnityEngine.Random.Range(0, rewardList.Count);
             collectedReward = rewardList[rndmRange];
             Debug.Log($"SetReward {collectedReward.name} id { collectedReward.id}");
@@ -60,14 +55,14 @@ namespace CardGame
         {
             Image rewardImage = GetRewardBehaviour().iconRenderer;
             Vector2 maxScale = new Vector2(2f, 2f);
-            rewardImage.transform.DOScale(maxScale, collectDuration).SetEase(Ease.OutBack).onComplete = CollectEndHandler;
+            rewardImage.transform.DOScale(maxScale, collectDuration).SetEase(Ease.OutQuad).onComplete = CollectEndHandler;
             //rewardImage.transform.DOMove(collectTransform.position, collectDuration).onComplete = CollectEndHandler;
         }
 
 
         private void CollectEndHandler()
         {
-            _rewardHandler.HandleReward(collectedReward);
+            GameManager.Instance.HandleReward(collectedReward);
 
             GetRewardBehaviour().ResetTransform();
             Collected?.Invoke();

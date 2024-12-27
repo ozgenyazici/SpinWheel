@@ -1013,7 +1013,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spinTransform: {fileID: 285739441}
   spinDuration: 2
-  spinMultiplier: 1
+  spinMultiplier: 2
 --- !u!114 &285739443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1117,6 +1117,7 @@ GameObject:
   - component: {fileID: 374841647}
   - component: {fileID: 374841646}
   - component: {fileID: 374841645}
+  - component: {fileID: 374841648}
   m_Layer: 5
   m_Name: ui_spinWheel_claim_button
   m_TagString: Untagged
@@ -1131,20 +1132,20 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 374841643}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 202527337}
-  m_Father: {fileID: 1995065977}
-  m_RootOrder: 3
+  m_Father: {fileID: 1357180654}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 50}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -55}
   m_SizeDelta: {x: 300, y: 90}
-  m_Pivot: {x: 0.5, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &374841645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1227,6 +1228,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 374841643}
   m_CullTransparentMesh: 1
+--- !u!114 &374841648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374841643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a056c301fa3ea58479e1151db2741b04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 202527338}
+  button: {fileID: 374841645}
 --- !u!1 &445055259
 GameObject:
   m_ObjectHideFlags: 0
@@ -2046,6 +2061,7 @@ GameObject:
   - component: {fileID: 634081839}
   - component: {fileID: 634081838}
   - component: {fileID: 634081837}
+  - component: {fileID: 634081841}
   m_Layer: 5
   m_Name: Revive_BTN
   m_TagString: Untagged
@@ -2176,6 +2192,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 634081835}
   m_CullTransparentMesh: 1
+--- !u!114 &634081841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634081835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24b1ac28bc556334084a991a077d4fb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1093824819}
+  button: {fileID: 634081838}
 --- !u!1 &637856862
 GameObject:
   m_ObjectHideFlags: 0
@@ -2854,8 +2884,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canvasGroup: {fileID: 869304698}
-  _giveUpButton: {fileID: 1321972963}
-  _reviveButton: {fileID: 634081838}
+  _giveUpButton: {fileID: 1321972966}
+  _reviveButton: {fileID: 634081841}
 --- !u!225 &869304698
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -4166,6 +4196,7 @@ GameObject:
   - component: {fileID: 1321972964}
   - component: {fileID: 1321972963}
   - component: {fileID: 1321972962}
+  - component: {fileID: 1321972966}
   m_Layer: 5
   m_Name: GiveUP_BTN
   m_TagString: Untagged
@@ -4296,6 +4327,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1321972960}
   m_CullTransparentMesh: 1
+--- !u!114 &1321972966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321972960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 513c716b313ffc741887005821056033, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1983170175}
+  button: {fileID: 1321972963}
 --- !u!1 &1353000562
 GameObject:
   m_ObjectHideFlags: 0
@@ -4334,6 +4379,43 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 200}
   m_Pivot: {x: 0.5, y: 1}
+--- !u!1 &1357180653
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1357180654}
+  m_Layer: 5
+  m_Name: claim_button_holder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1357180654
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357180653}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 374841644}
+  m_Father: {fileID: 1995065977}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 50}
+  m_SizeDelta: {x: 500, y: 200}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!1 &1449669954
 GameObject:
   m_ObjectHideFlags: 0
@@ -5983,7 +6065,7 @@ RectTransform:
   - {fileID: 1043726992}
   - {fileID: 1514277528}
   - {fileID: 1743323269}
-  - {fileID: 374841644}
+  - {fileID: 1357180654}
   m_Father: {fileID: 1764913543}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

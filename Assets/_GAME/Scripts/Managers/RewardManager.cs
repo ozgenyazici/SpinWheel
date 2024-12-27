@@ -36,5 +36,9 @@ namespace CardGame
             return rewardDummy;
         }
 
+        public void AddReward()
+        {
+
+        }
     }
 }

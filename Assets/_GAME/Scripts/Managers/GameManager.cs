@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace CardGame
 {
-    public class GameManager : MonoBehaviour, IFailable, IRestartable
+    public class GameManager : MonoBehaviour, IFailable, IRestartable, ICompleteable
     {
         public static GameManager Instance;
 
@@ -14,7 +14,7 @@ namespace CardGame
         private int _currentRound = 1;
 
         public event Action Failed;
-
+        public void Complete() => CompleteGame();
         public void Restart() => StartGame();
 
         void Awake()
@@ -48,14 +48,17 @@ namespace CardGame
             wheelManager.SetWheel(_currentRound);
 
         }
-
+        public void CompleteGame()
+        {
+            UpdateRound();
+            SetupGame();
+        }
         public void GameOver() { }
 
         public void UpdateRound() { _currentRound++; }
+
         public void HandleReward(Reward reward)
         {
-            UnityEngine.Debug.Log($"Reward name {reward.name} bomb : {reward.isBomb}");
-
             if (reward.isBomb)
                 Failed?.Invoke();
 

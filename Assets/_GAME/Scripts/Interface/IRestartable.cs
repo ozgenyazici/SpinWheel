@@ -5,5 +5,4 @@ namespace CardGame
     {
         void Restart();
     }
-
 }

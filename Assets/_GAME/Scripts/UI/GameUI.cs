@@ -29,21 +29,33 @@ namespace CardGame
         }
         private void FailGame()
         {
-            Debug.Log($"IsWorking!");
             _failPopup.Show(true);
         }
         private void ReviveGame()
         {
             _failPopup.Show(false);
             _gameManager.Restart();
-            //GameManager revive
         }
         private void GiveUpGame()
         {
             _failPopup.Show(false);
             _gameManager.GameOver();
-            //GameManagerGiveUp
         }
     }
 
+    public class LevelHandler : MonoBehaviour {
+
+        [SerializeField] private GameManager _gameManager;
+
+        private void Start()
+        {
+            _gameManager.end
+        }
+
+        private void RoundCompleteEvent()
+        {
+
+        }
+    
+    }
 }
