@@ -14,8 +14,8 @@ namespace CardGame
             {
                 button.onClick.AddListener(SpinEventListener);
             }
-
-            spinBehaviour.SpinEnded += SpinEndedHandler;
+            wheelManager.Collected += SpinEndedHandler;
+            //spinBehaviour.SpinEnded += SpinEndedHandler;
         }
         private void SpinEventListener()
         {

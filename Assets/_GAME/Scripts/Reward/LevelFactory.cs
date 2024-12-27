@@ -8,12 +8,12 @@ namespace CardGame
 
         private const string resourcePath = "Levels";
 
-        public Reward GetReward(string name)
+        public Reward GetReward(int id)
         {
             Reward reward = new Reward();
-            reward.icon = rewardManager.GetIcon(name);
-            reward.name = rewardManager.GetName(name);
-            reward.value = rewardManager.GetValue(name);
+            reward.icon = rewardManager.GetIcon(id);
+            reward.name = rewardManager.GetName(id);
+            reward.value = rewardManager.GetValue(id);
 
             return reward;
         }

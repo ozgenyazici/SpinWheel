@@ -1,44 +1,66 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 
 namespace CardGame
 {
-    public class GameManager : MonoBehaviour
+    public class GameManager : MonoBehaviour, IFailable, IRestartable
     {
-        public WheelDataSO bronzeSpinWheelData;
-        public WheelDataSO silverSpinWheelData;
-        public WheelDataSO goldenSpinWheelData;
+        public static GameManager Instance;
 
-        private int round;
+        [SerializeField] private WheelManager wheelManager;
+        [SerializeField] private SpinBehaviour spinBehaviour;
+        private Player _player;
+        private int _currentRound = 1;
 
-        void Start()
+        public event Action Failed;
+
+        public void Restart() => StartGame();
+
+        void Awake()
         {
-            //  RewardManager.Instance.bronzeSpinWheelData = bronzeSpinWheelData;
-            //  RewardManager.Instance.silverSpinWheelData = silverSpinWheelData;
-            // RewardManager.Instance.goldenSpinWheelData = goldenSpinWheelData;
 
-            PlayGame(30);
+            Application.targetFrameRate = 60;
+            if (Instance == null)
+                Instance = this;
+            else if (Instance != this)
+                Destroy(gameObject);
+
+            DontDestroyOnLoad(this);
+
+
+
+            _player = new Player();
+            wheelManager.Collected += UpdateRound;
+
+        }
+        private void Start()
+        {
+            StartGame();
+        }
+        private void StartGame()
+        {
+            SetupGame();
         }
 
-        void PlayGame(int totalRounds)
+        private void SetupGame()
         {
-            for (int round = 1; round <= totalRounds; round++)
-            {
-                // List<Reward> selectedRewards = RewardManager.Instance.SetupSpin(round);
-                //Debug.Log($"Selected Rewards for Round {round}: {string.Join(", ", selectedRewards.Select(r => r.name))}");
-            }
+            wheelManager.SetWheel(_currentRound);
 
-            UpdateSpinWheelUI();
         }
 
-        public int GetRound()
+        public void GameOver() { }
+
+        public void UpdateRound() { _currentRound++; }
+        public void HandleReward(Reward reward)
         {
-            return round;
+            UnityEngine.Debug.Log($"Reward name {reward.name} bomb : {reward.isBomb}");
+
+            if (reward.isBomb)
+                Failed?.Invoke();
+
         }
-        private void UpdateSpinWheelUI()
-        {
-            //   Sprite bgSprite = RewardManager.Instance.GetBackgroundSprite();
-            //   Sprite indicatorSprite = RewardManager.Instance.GetIndicatorSprite();
-        }
+
     }
+
 }
