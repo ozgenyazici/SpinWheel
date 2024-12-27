@@ -1,7 +1,8 @@
-﻿namespace CardGame
+﻿using System;
+namespace CardGame
 {
     public interface ICompleteable
     {
-        void Complete();
+        event Action Completed;
     }
 }

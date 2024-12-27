@@ -3,9 +3,10 @@ namespace CardGame
 {
     public class GameUI : MonoBehaviour
     {
+        IFailable _failable;
+
         [SerializeField] private GameManager _gameManager;
 
-        IFailable _failable;
 
         [SerializeField] private GamePopupUI _failPopup;
 
@@ -43,19 +44,4 @@ namespace CardGame
         }
     }
 
-    public class LevelHandler : MonoBehaviour {
-
-        [SerializeField] private GameManager _gameManager;
-
-        private void Start()
-        {
-            _gameManager.end
-        }
-
-        private void RoundCompleteEvent()
-        {
-
-        }
-    
-    }
 }

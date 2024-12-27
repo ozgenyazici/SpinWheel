@@ -10,17 +10,23 @@ namespace CardGame
 
         [SerializeField] private WheelManager wheelManager;
         [SerializeField] private SpinBehaviour spinBehaviour;
+
+        [SerializeField] RoundView _roundView;
+        RoundPresenter _presenter;
+
+
         private Player _player;
         private int _currentRound = 1;
 
         public event Action Failed;
-        public void Complete() => CompleteGame();
+        public event Action Completed;
         public void Restart() => StartGame();
 
         void Awake()
         {
 
             Application.targetFrameRate = 60;
+
             if (Instance == null)
                 Instance = this;
             else if (Instance != this)
@@ -29,11 +35,20 @@ namespace CardGame
             DontDestroyOnLoad(this);
 
 
-
+            _presenter = new RoundPresenter(this, _roundView);
             _player = new Player();
-            wheelManager.Collected += UpdateRound;
 
         }
+        private void OnEnable()
+        {
+            wheelManager.Collected += SuccessRound;
+        }
+        private void OnDisable()
+        {
+            wheelManager.Collected -= SuccessRound;
+
+        }
+
         private void Start()
         {
             StartGame();
@@ -48,22 +63,57 @@ namespace CardGame
             wheelManager.SetWheel(_currentRound);
 
         }
-        public void CompleteGame()
+
+        public void GameOver()
         {
+            _currentRound = SetRound(1);
+            SetupGame();
+        }
+
+        private void SuccessRound(Reward reward)
+        {
+            RewardHolder.AddReward(reward);
+
             UpdateRound();
             SetupGame();
         }
-        public void GameOver() { }
 
-        public void UpdateRound() { _currentRound++; }
+        public void ClaimAllReward()
+        {
 
-        public void HandleReward(Reward reward)
+            _player.ClaimRewards(RewardHolder.GetRewards());
+            RewardHolder.ClearRewards();
+        }
+        public void UpdateRound()
+        {
+            _currentRound++;
+            _presenter.UpdateView();
+        }
+
+        public bool HandleReward(Reward reward)
         {
             if (reward.isBomb)
-                Failed?.Invoke();
+                return true;
+            else
+                return false;
 
         }
 
+        private int SetRound(int index)
+        {
+            return _currentRound < index ? _currentRound = 1 : _currentRound;
+
+        }
+
+        public int GetRound()
+        {
+            return _currentRound;
+        }
+
+        public void CallEvent()
+        {
+            Failed?.Invoke();
+        }
     }
 
 }

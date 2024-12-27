@@ -23,7 +23,7 @@ MonoBehaviour:
     name: Bomb
     icon: {fileID: 21300000, guid: 5a942ddaa378c1e4db6fc0107be205f6, type: 3}
     value: 1
-    isBomb: 0
+    isBomb: 1
   - id: 2
     name: Gold_250
     icon: {fileID: 21300000, guid: 732f7392d48b4064eb686a274210ad32, type: 3}

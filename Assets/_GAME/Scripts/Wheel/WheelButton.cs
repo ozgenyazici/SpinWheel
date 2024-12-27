@@ -14,22 +14,32 @@ namespace CardGame
             {
                 button.onClick.AddListener(SpinEventListener);
             }
+
+        }
+
+        private void OnEnable()
+        {
             wheelManager.Collected += SpinEndedHandler;
-            //spinBehaviour.SpinEnded += SpinEndedHandler;
+        }
+        private void OnDisable()
+        {
+            wheelManager.Collected -= SpinEndedHandler;
         }
         private void SpinEventListener()
         {
             button.interactable = false;
+            wheelManager.state = WheelManager.State.Spining;
 
             wheelManager.SetReward();
         }
 
-        private void SpinEndedHandler()
+        private void SpinEndedHandler(Reward reward = null)
         {
+            wheelManager.state = WheelManager.State.Idle;
+
             button.interactable = true;
 
         }
     }
-
 
 }

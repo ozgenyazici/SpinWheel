@@ -6,17 +6,21 @@ using DG.Tweening;
 
 namespace CardGame
 {
-    public class WheelManager : MonoBehaviour, IFailable
+    public class WheelManager : MonoBehaviour, ICompleteable
     {
+        public enum State { Idle, Spining };
+        public State state;
+
         public SpinWheelDataEvent OnSpinWheelDataEvent = new SpinWheelDataEvent();
 
-        public event Action Collected;
-        public event Action Failed;
+        public event Action<Reward> Collected;
+        public event Action Completed;
 
         public WheelDataSO bronzeSpinWheelData;
         public WheelDataSO silverSpinWheelData;
         public WheelDataSO goldenSpinWheelData;
 
+        IFailable _failable;
 
         [SerializeField] private List<RewardBehaviour> rewardBehaviourList;
 
@@ -34,6 +38,8 @@ namespace CardGame
         public List<Reward> rewardList;
 
 
+
+
         private void Awake()
         {
             spinBehaviour.SpinEnded += CollectReward;
@@ -42,14 +48,12 @@ namespace CardGame
         {
             int rndmRange = UnityEngine.Random.Range(0, rewardList.Count);
             collectedReward = rewardList[rndmRange];
-            Debug.Log($"SetReward {collectedReward.name} id { collectedReward.id}");
             spinBehaviour.StartSpin(collectedReward.id, rewardList.Count);
         }
         public WheelDataSO GetCurrentWheelData()
         {
             return _currentSpinWheelData;
         }
-
 
         public void CollectReward()
         {
@@ -62,11 +66,13 @@ namespace CardGame
 
         private void CollectEndHandler()
         {
-            GameManager.Instance.HandleReward(collectedReward);
-
+            bool isBomb = GameManager.Instance.HandleReward(collectedReward);
             GetRewardBehaviour().ResetTransform();
-            Collected?.Invoke();
 
+            if (!isBomb)
+                Collected?.Invoke(collectedReward);
+            else
+                GameManager.Instance.CallEvent();
         }
         public RewardBehaviour GetRewardBehaviour()
         {
@@ -80,7 +86,6 @@ namespace CardGame
         }
         public void SetWheel(int round)
         {
-
             LevelDataSO levelDataSO = levelFactory.GetLevelData(round);
             rewardList = levelDataSO.rewards;
             _currentSpinWheelData = levelDataSO.wheelData;
