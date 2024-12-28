@@ -44,8 +44,16 @@ namespace CardGame
         }
         public void SetReward()
         {
-            int rndmRange = UnityEngine.Random.Range(0, rewardList.Count);
-            collectedReward = rewardList[rndmRange];
+            List<WeightedNumber> rewardWeights = new List<WeightedNumber>();
+
+            for (int i = 0; i < rewardList.Count; i++)
+            {
+                rewardWeights.Add(new WeightedNumber(i, rewardList[i].weight));
+            }
+
+            int selectedReward = RandomWeighted.PickRandom(rewardWeights.ToArray());
+
+            collectedReward = rewardList[selectedReward];
             spinBehaviour.StartSpin(collectedReward.id, rewardList.Count);
         }
         public WheelDataSO GetCurrentWheelData()

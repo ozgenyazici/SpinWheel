@@ -9,6 +9,7 @@ namespace CardGame
         public string name;
         public Sprite icon;
         public int value;
+        public float weight;
         public bool isBomb;
 
     }
