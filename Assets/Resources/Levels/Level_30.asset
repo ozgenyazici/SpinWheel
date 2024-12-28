@@ -12,45 +12,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a595b475da257b40bd5d5f0c461b0f3, type: 3}
   m_Name: Level_30
   m_EditorClassIdentifier: 
-  wheelData: {fileID: 11400000, guid: cad86620081184a4f8c202104a9d9126, type: 2}
+  wheelData: {fileID: 11400000, guid: 469f491185dd51a40bb7bdccfb6ab8b8, type: 2}
   rewards:
   - id: 0
-    name: Gold_150
-    icon: {fileID: 21300000, guid: 732f7392d48b4064eb686a274210ad32, type: 3}
-    value: 150
+    name: Sniper
+    icon: {fileID: 21300000, guid: 0f51dfb37407c504cb141f4a2205f781, type: 3}
+    value: 1
+    weight: 1
     isBomb: 0
   - id: 1
     name: Cash_20
     icon: {fileID: 21300000, guid: aeae5d455314a6d4f9aa83ac9b21a17a, type: 3}
-    value: 20
+    value: 50
+    weight: 3
     isBomb: 0
   - id: 2
-    name: Gold_1000
-    icon: {fileID: 21300000, guid: 732f7392d48b4064eb686a274210ad32, type: 3}
-    value: 1000
+    name: SMG
+    icon: {fileID: 21300000, guid: 9b4d581c6f73ddd4e8161afc5d971ad1, type: 3}
+    value: 1
+    weight: 5
     isBomb: 0
   - id: 3
-    name: Small_Chest
-    icon: {fileID: 21300000, guid: 4be3b5c9908d25740b33f6e7b2a512f5, type: 3}
+    name: Molotov
+    icon: {fileID: 21300000, guid: fe8ed4cf7b937b547a7c52e9baa3608b, type: 3}
     value: 1
+    weight: 7
     isBomb: 0
   - id: 4
-    name: Silver_Chest
-    icon: {fileID: 21300000, guid: 0e78ee7039eaf774cb6484c568d1809b, type: 3}
+    name: Gold_Chest
+    icon: {fileID: 21300000, guid: afa2a6d85d5a4574a8ef9c4f4f99a1e5, type: 3}
     value: 1
+    weight: 7
     isBomb: 0
   - id: 5
-    name: Gold_1500
-    icon: {fileID: 21300000, guid: 732f7392d48b4064eb686a274210ad32, type: 3}
-    value: 1500
+    name: Super Chest
+    icon: {fileID: 21300000, guid: 9836434089fbede46a88af69586d5f6c, type: 3}
+    value: 1
+    weight: 5
     isBomb: 0
   - id: 6
-    name: Gold_200
+    name: Gold
     icon: {fileID: 21300000, guid: 732f7392d48b4064eb686a274210ad32, type: 3}
-    value: 200
+    value: 2000
+    weight: 10
     isBomb: 0
   - id: 7
-    name: Gold_500
-    icon: {fileID: 21300000, guid: 4be3b5c9908d25740b33f6e7b2a512f5, type: 3}
-    value: 500
+    name: Bayonet_Easter
+    icon: {fileID: 21300000, guid: 69ec4025a72fae448a86a94aabef87de, type: 3}
+    value: 1
+    weight: 1
     isBomb: 0
