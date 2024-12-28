@@ -30,7 +30,7 @@ MonoBehaviour:
     name: Bomb
     icon: {fileID: 21300000, guid: 5a942ddaa378c1e4db6fc0107be205f6, type: 3}
     value: 1
-    weight: 5
+    weight: 100
     isBomb: 1
   - id: 3
     name: Bronze Chest

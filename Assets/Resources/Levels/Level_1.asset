@@ -57,7 +57,7 @@ MonoBehaviour:
     weight: 10
     isBomb: 0
   - id: 7
-    name: Gold
+    name: Small Chest
     icon: {fileID: 21300000, guid: 4be3b5c9908d25740b33f6e7b2a512f5, type: 3}
     value: 1
     weight: 5

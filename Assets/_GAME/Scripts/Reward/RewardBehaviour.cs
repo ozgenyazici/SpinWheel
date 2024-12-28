@@ -5,24 +5,22 @@ namespace CardGame
 {
     public class RewardBehaviour : MonoBehaviour
     {
-        public Image iconRenderer;
+        public SpriteRenderer spriteRenderer;
         [SerializeField] private TextMeshProUGUI value;
 
-        private Vector2 imageStartPos;
         private Vector2 imageStartScale;
         public Reward data;
         public void Initialize(Reward rewardData)
         {
             this.data = rewardData;
-            imageStartPos = iconRenderer.transform.localPosition;
-            imageStartScale = iconRenderer.transform.localScale;
+            imageStartScale = spriteRenderer.transform.localScale;
             SetIcon();
             SetName();
             SetValue();
         }
         private void SetIcon()
         {
-            iconRenderer.sprite = data.icon;
+            spriteRenderer.sprite = data.icon;
         }
 
         private void SetName()
@@ -37,8 +35,7 @@ namespace CardGame
 
         public void ResetTransform()
         {
-            iconRenderer.transform.localPosition = imageStartPos;
-            iconRenderer.transform.localScale = imageStartScale;
+            spriteRenderer.transform.localScale = imageStartScale;
         }
 
     }

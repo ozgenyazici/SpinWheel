@@ -70,8 +70,8 @@ namespace CardGame
 
             _rewardPresenter.UpdateView(collectedReward.name, collectedReward.value, _currentSpinWheelData.textColor);
 
-            Image rewardImage = GetRewardBehaviour().iconRenderer;
-            Vector2 maxScale = new Vector2(2f, 2f);
+            SpriteRenderer rewardImage = GetRewardBehaviour().spriteRenderer;
+            Vector2 maxScale = new Vector2(rewardImage.transform.localScale.x * 1.5f, rewardImage.transform.localScale.x * 1.5f);
             rewardImage.transform.DOScale(maxScale, collectDuration).SetEase(Ease.OutQuad).onComplete = CollectEndHandler;
         }
 
