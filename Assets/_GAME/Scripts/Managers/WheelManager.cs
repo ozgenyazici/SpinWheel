@@ -20,8 +20,6 @@ namespace CardGame
         public WheelDataSO silverSpinWheelData;
         public WheelDataSO goldenSpinWheelData;
 
-        IFailable _failable;
-
         [SerializeField] private List<RewardBehaviour> rewardBehaviourList;
 
         [SerializeField] private LevelFactory levelFactory;
@@ -42,7 +40,7 @@ namespace CardGame
 
         private void Awake()
         {
-            spinBehaviour.SpinEnded += CollectReward;
+            spinBehaviour.SpinEnded += RewardAnim;
         }
         public void SetReward()
         {
@@ -55,7 +53,7 @@ namespace CardGame
             return _currentSpinWheelData;
         }
 
-        public void CollectReward()
+        public void RewardAnim()
         {
             Image rewardImage = GetRewardBehaviour().iconRenderer;
             Vector2 maxScale = new Vector2(2f, 2f);
@@ -66,6 +64,8 @@ namespace CardGame
 
         private void CollectEndHandler()
         {
+            Completed?.Invoke();
+
             bool isBomb = GameManager.Instance.HandleReward(collectedReward);
             GetRewardBehaviour().ResetTransform();
 

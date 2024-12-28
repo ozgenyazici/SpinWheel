@@ -40,7 +40,7 @@ namespace CardGame
         private void GiveUpGame()
         {
             _failPopup.Show(false);
-            _gameManager.GameOver();
+            _gameManager.ResetGame();
         }
     }
 

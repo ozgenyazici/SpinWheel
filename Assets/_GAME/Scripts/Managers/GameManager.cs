@@ -64,10 +64,11 @@ namespace CardGame
 
         }
 
-        public void GameOver()
+        public void ResetGame()
         {
             _currentRound = SetRound(1);
             SetupGame();
+            UpdateRound();
         }
 
         private void SuccessRound(Reward reward)
@@ -80,9 +81,9 @@ namespace CardGame
 
         public void ClaimAllReward()
         {
-
             _player.ClaimRewards(RewardHolder.GetRewards());
             RewardHolder.ClearRewards();
+            ResetGame();
         }
         public void UpdateRound()
         {
@@ -101,7 +102,7 @@ namespace CardGame
 
         private int SetRound(int index)
         {
-            return _currentRound < index ? _currentRound = 1 : _currentRound;
+            return index < 1 ? _currentRound = 1 : index;
 
         }
 

@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a595b475da257b40bd5d5f0c461b0f3, type: 3}
+  m_Name: Level_20
+  m_EditorClassIdentifier: 
+  wheelData: {fileID: 11400000, guid: cad86620081184a4f8c202104a9d9126, type: 2}
+  rewards:
+  - id: 0
+    name: Gold_150
+    icon: {fileID: 21300000, guid: 732f7392d48b4064eb686a274210ad32, type: 3}
+    value: 150
+    isBomb: 0
+  - id: 1
+    name: Cash_20
+    icon: {fileID: 21300000, guid: aeae5d455314a6d4f9aa83ac9b21a17a, type: 3}
+    value: 20
+    isBomb: 0
+  - id: 2
+    name: Gold_1000
+    icon: {fileID: 21300000, guid: 732f7392d48b4064eb686a274210ad32, type: 3}
+    value: 1000
+    isBomb: 0
+  - id: 3
+    name: Small_Chest
+    icon: {fileID: 21300000, guid: 4be3b5c9908d25740b33f6e7b2a512f5, type: 3}
+    value: 1
+    isBomb: 0
+  - id: 4
+    name: Silver_Chest
+    icon: {fileID: 21300000, guid: 0e78ee7039eaf774cb6484c568d1809b, type: 3}
+    value: 1
+    isBomb: 0
+  - id: 5
+    name: Gold_1500
+    icon: {fileID: 21300000, guid: 732f7392d48b4064eb686a274210ad32, type: 3}
+    value: 1500
+    isBomb: 0
+  - id: 6
+    name: Gold_200
+    icon: {fileID: 21300000, guid: 732f7392d48b4064eb686a274210ad32, type: 3}
+    value: 200
+    isBomb: 0
+  - id: 7
+    name: Gold_500
+    icon: {fileID: 21300000, guid: 4be3b5c9908d25740b33f6e7b2a512f5, type: 3}
+    value: 500
+    isBomb: 0

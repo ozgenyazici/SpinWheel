@@ -20,10 +20,13 @@ namespace CardGame
         private void OnEnable()
         {
             wheelManager.Collected += SpinEndedHandler;
+            wheelManager.Completed += SpiningEnd;
         }
         private void OnDisable()
         {
             wheelManager.Collected -= SpinEndedHandler;
+            wheelManager.Completed -= SpiningEnd;
+
         }
         private void SpinEventListener()
         {
@@ -33,6 +36,11 @@ namespace CardGame
             wheelManager.SetReward();
         }
 
+        private void SpiningEnd()
+        {
+            button.interactable = true;
+            wheelManager.state = WheelManager.State.Idle;
+        }
         private void SpinEndedHandler(Reward reward = null)
         {
             wheelManager.state = WheelManager.State.Idle;

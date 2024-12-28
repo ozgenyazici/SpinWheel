@@ -15,18 +15,12 @@ namespace CardGame
         }
         public void ClaimRewards(Dictionary<string, int> rewards)
         {
-
-            foreach (var i in rewards)
-            {
-                Debug.Log($"Rewards {i.Key}_{i.Value}");
-            }
-
             SaveRewards(rewards);
         }
 
         private void SaveRewards(Dictionary<string, int> rewards)
         {
-            //    string json = JsonConvert.SerializeObject(collectedRewards);
+            //string json = JsonConvert.SerializeObject(collectedRewards);
 
             //PlayerPrefs.SetString("collectedRewards", json);
             //PlayerPrefs.Save();
