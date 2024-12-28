@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace CardGame
 {
-    public class GameManager : MonoBehaviour, IFailable, IRestartable, ICompleteable
+    public class GameManager : MonoBehaviour, IFailable, IRestartable
     {
         public static GameManager Instance;
 
@@ -19,7 +19,6 @@ namespace CardGame
         private int _currentRound = 1;
 
         public event Action Failed;
-        public event Action Completed;
         public void Restart() => StartGame();
 
         void Awake()
@@ -68,7 +67,8 @@ namespace CardGame
         {
             _currentRound = SetRound(1);
             SetupGame();
-            UpdateRound();
+            _presenter.UpdateView();
+
         }
 
         private void SuccessRound(Reward reward)

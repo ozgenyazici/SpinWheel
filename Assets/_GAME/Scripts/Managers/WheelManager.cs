@@ -87,6 +87,9 @@ namespace CardGame
                 Collected?.Invoke(collectedReward);
             else
                 GameManager.Instance.CallEvent();
+
+
+            _rewardPresenter.UpdateView(collectedReward.name, collectedReward.value, default);
         }
         public RewardBehaviour GetRewardBehaviour()
         {

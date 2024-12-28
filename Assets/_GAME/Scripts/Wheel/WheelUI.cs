@@ -6,6 +6,7 @@ namespace CardGame
     public class WheelUI : MonoBehaviour
     {
         [SerializeField] private Image backgroundImage;
+        [SerializeField] private Image wheelImage;
         [SerializeField] private Image indicatorImage;
         [SerializeField] private WheelManager wheelManager;
         private void OnEnable()
@@ -20,7 +21,8 @@ namespace CardGame
 
         void UpdateSpinWheelVisuals(WheelDataSO spinWheelData)
         {
-            backgroundImage.sprite = spinWheelData.bgSprite;
+            wheelImage.sprite = spinWheelData.bgSprite;
+            backgroundImage.sprite = spinWheelData.zoneBg;
             indicatorImage.sprite = spinWheelData.indicatorSprite;
         }
     }
