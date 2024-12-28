@@ -8,9 +8,11 @@ namespace CardGame
     [System.Serializable]
     public class WheelDataSO : ScriptableObject
     {
+        public string name;
         public Sprite zoneBg;
         public Sprite bgSprite;
         public Sprite indicatorSprite;
+        public Color textColor;
 
     }
 

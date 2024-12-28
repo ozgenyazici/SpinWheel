@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50b9d9e8103175248bb88d7f801b4b7d, type: 3}
   m_Name: SilverSpinSO
   m_EditorClassIdentifier: 
+  name: Silver Spin
   zoneBg: {fileID: 21300000, guid: 51849bf7550548d44a359405a36acdb8, type: 3}
   bgSprite: {fileID: 21300000, guid: 9d3a45b9332919d41b0c3e7534d0d4f9, type: 3}
   indicatorSprite: {fileID: 21300000, guid: 366db09d9abba174c8d1a3866ec1aeb5, type: 3}
+  textColor: {r: 0.3207547, g: 0.3207547, b: 0.3207547, a: 1}

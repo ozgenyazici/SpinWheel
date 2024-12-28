@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50b9d9e8103175248bb88d7f801b4b7d, type: 3}
   m_Name: BronzeSpinSO
   m_EditorClassIdentifier: 
+  name: Bronze Spin
   zoneBg: {fileID: 21300000, guid: 28d2dbc122c509e4d863d56bd915ae6c, type: 3}
   bgSprite: {fileID: 21300000, guid: a69b1b1cb06f1be4d9315f15d76152dc, type: 3}
   indicatorSprite: {fileID: 21300000, guid: 6afece689acda1a43af71e4aff4d10bb, type: 3}
+  textColor: {r: 0.6981132, g: 0.42061087, b: 0.06915272, a: 1}

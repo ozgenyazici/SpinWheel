@@ -6,28 +6,32 @@ namespace CardGame
     public class Player
     {
         private Dictionary<string, int> collectedRewards = new Dictionary<string, int>();
-
+        private int Coin;
 
         public void ResetRewards()
         {
-
             collectedRewards.Clear();
         }
         public void ClaimRewards(Dictionary<string, int> rewards)
         {
-            SaveRewards(rewards);
+            foreach (var reward in rewards)
+            {
+                if (collectedRewards.ContainsKey(reward.Key))
+                    collectedRewards[reward.Key] += reward.Value;
+                else
+                    collectedRewards.Add(reward.Key, reward.Value);
+            }
+
         }
 
-        private void SaveRewards(Dictionary<string, int> rewards)
-        {
-            //string json = JsonConvert.SerializeObject(collectedRewards);
 
-            //PlayerPrefs.SetString("collectedRewards", json);
-            //PlayerPrefs.Save();
-        }
 
 
 
     }
 
+    public class Currency
+    {
+        private const int minCurrency = 0;
+    }
 }

@@ -13,8 +13,6 @@ namespace CardGame
             else
                 rewardList.Add(reward.name, reward.value);
 
-
-            Debug.Log($"<Color=Green> Added reward {reward.name} </color>");
         }
 
         public static void ClearRewards()
@@ -22,7 +20,7 @@ namespace CardGame
             rewardList.Clear();
         }
 
-        public static Dictionary<string,int> GetRewards()
+        public static Dictionary<string, int> GetRewards()
         {
             return rewardList;
         }

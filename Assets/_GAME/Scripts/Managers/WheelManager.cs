@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
-
+using TMPro;
 namespace CardGame
 {
     public class WheelManager : MonoBehaviour, ICompleteable
@@ -16,9 +16,6 @@ namespace CardGame
         public event Action<Reward> Collected;
         public event Action Completed;
 
-        public WheelDataSO bronzeSpinWheelData;
-        public WheelDataSO silverSpinWheelData;
-        public WheelDataSO goldenSpinWheelData;
 
         [SerializeField] private List<RewardBehaviour> rewardBehaviourList;
 
@@ -33,13 +30,20 @@ namespace CardGame
 
         private Reward collectedReward;
 
-        public List<Reward> rewardList;
+        private List<Reward> rewardList;
 
+        [Header("UI")]
+        [SerializeField] private WheelRewardView _rewardView;
+        private WheelRewardPresenter _rewardPresenter;
 
-
+        [SerializeField] private WheelNameView _nameView;
+        private WheelNamePresenter _namePresenter;
 
         private void Awake()
         {
+            _namePresenter = new WheelNamePresenter(this, _nameView);
+            _rewardPresenter = new WheelRewardPresenter(_rewardView);
+
             spinBehaviour.SpinEnded += RewardAnim;
         }
         public void SetReward()
@@ -63,10 +67,12 @@ namespace CardGame
 
         public void RewardAnim()
         {
+
+            _rewardPresenter.UpdateView(collectedReward.name, collectedReward.value, _currentSpinWheelData.textColor);
+
             Image rewardImage = GetRewardBehaviour().iconRenderer;
             Vector2 maxScale = new Vector2(2f, 2f);
             rewardImage.transform.DOScale(maxScale, collectDuration).SetEase(Ease.OutQuad).onComplete = CollectEndHandler;
-            //rewardImage.transform.DOMove(collectTransform.position, collectDuration).onComplete = CollectEndHandler;
         }
 
 
@@ -109,7 +115,13 @@ namespace CardGame
 
             }
 
+            _namePresenter.UpdateView();
             OnSpinWheelDataEvent.Invoke(_currentSpinWheelData);
+        }
+
+        public List<Reward> GetRewardList()
+        {
+            return rewardList;
         }
     }
 

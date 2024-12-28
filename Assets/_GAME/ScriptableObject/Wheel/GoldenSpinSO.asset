@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50b9d9e8103175248bb88d7f801b4b7d, type: 3}
   m_Name: GoldenSpinSO
   m_EditorClassIdentifier: 
+  name: Golden Spin
   zoneBg: {fileID: 21300000, guid: 29fb26f2803359f47a58cbddf749ba28, type: 3}
   bgSprite: {fileID: 21300000, guid: 7e95b3b178bb7c845960bf2611fcb7e4, type: 3}
   indicatorSprite: {fileID: 21300000, guid: bd6d7a394854e9d429d11dd32824a351, type: 3}
+  textColor: {r: 0.9150943, g: 0.843085, b: 0.18560876, a: 1}

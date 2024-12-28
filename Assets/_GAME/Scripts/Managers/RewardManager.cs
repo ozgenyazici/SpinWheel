@@ -27,7 +27,7 @@ namespace CardGame
 
         private Reward RewardItem(int id)
         {
-            foreach (Reward reward in wheelManager.rewardList)
+            foreach (Reward reward in wheelManager.GetRewardList())
             {
                 if (reward.id == id)
                     return reward;

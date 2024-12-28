@@ -14,8 +14,7 @@
         }
         public void UpdateView()
         {
-            _view.UpdateRoundText(_gameManager.GetRound());
+            _view.UpdateText(_gameManager.GetRound().ToString());
         }
     }
-
 }

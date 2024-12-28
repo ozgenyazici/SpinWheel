@@ -1,16 +1,12 @@
-﻿using UnityEngine;
-using TMPro;
-
-namespace CardGame
+﻿namespace CardGame
 {
-    public class RoundView : MonoBehaviour
+    public class RoundView : BaseTextView
     {
-        public TextMeshProUGUI roundText;
-        public void UpdateRoundText(int roundIndex)
+        public override void UpdateText(string newText, int index=0)
         {
-            roundText.text = "Round : " + roundIndex;
+            textComponent.text = "Round " + newText;
         }
-
     }
 
+   
 }
