@@ -7,6 +7,10 @@ namespace CardGame
     {
         public TextMeshProUGUI textComponent;
 
+        private void OnValidate()
+        {
+            textComponent = GetComponent<TextMeshProUGUI>();
+        }
         public abstract void UpdateText(string newText, int index);
 
     }

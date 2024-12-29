@@ -7,14 +7,14 @@ namespace CardGame
         [SerializeField] private WheelManager wheelManager;
         [SerializeField] private SpinBehaviour spinBehaviour;
         [SerializeField] private Button button;
-
-        void OnValidate()
+        private void Awake()
         {
-            if (button != null)
-            {
-                button.onClick.AddListener(SpinEventListener);
-            }
+            button.onClick.AddListener(SpinEventListener);
+        }
 
+        private void OnValidate()
+        {
+            button = GetComponent<Button>();
         }
 
         private void OnEnable()
